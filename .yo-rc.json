@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Zane",
+      "authorEmail": "hzeng3@u.rochester.edu",
+      "authorUrl": ""
+    }
+  }
+}
