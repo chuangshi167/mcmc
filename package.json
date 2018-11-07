@@ -72,6 +72,8 @@
   },
   "license": "MIT",
   "dependencies": {
+    "ajv": "^6.5.5",
+    "command-line-args": "^5.0.2",
     "jsnetworkx": "^0.3.4"
   }
 }
