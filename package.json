@@ -63,7 +63,6 @@
     ]
   },
   "scripts": {
-    "pretest": "eslint .",
     "precommit": "lint-staged",
     "test": "mocha",
     "cover": "istanbul cover _mocha",
