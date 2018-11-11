@@ -138,4 +138,28 @@ describe('mcmc', () => {
     assert(mcmc.addOrRemove(Gi));
     assert(!mcmc.addOrRemove(Gj));
   });
+  it('convert the corridinates from string to array correctly', () => {
+    var coordinates = '0,0,1,1,-1,-1';
+    assert.equal(
+      mcmc.convert(coordinates).toString(),
+      [[0, 0], [1, 1], [-1, -1]].toString()
+    );
+  });
+  it('find the max distance correctly', () => {
+    var G = mcmc.createGraph(5, [[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1]]);
+    assert.equal(mcmc.maxDistance(G, 0), 3);
+    G.removeEdge(3, 4);
+    assert.equal(mcmc.maxDistance(G, 0), 3 + Math.sqrt(2));
+  });
+  it('find the number of edges connected to the source correctly', () => {
+    var G = mcmc.createGraph(5, [[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1]]);
+    assert.equal(mcmc.edgeConnectedToSource(G, 0), 2);
+    G.removeEdge(0, 4);
+    assert.equal(mcmc.edgeConnectedToSource(G, 0), 1);
+  });
+  it('calculate the expected value correctly', () => {
+    var targetList = [0, 1, 2, 3, 4];
+    var weightList = [1, 2, 3, 4, 5];
+    assert.equal(mcmc.expectedValue(targetList, weightList), 40 / 15);
+  });
 });
