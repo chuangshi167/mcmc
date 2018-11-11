@@ -17,17 +17,17 @@
   ],
   "devDependencies": {
     "coveralls": "^3.0.2",
-    "eslint": "^5.9.0",
-    "eslint-config-prettier": "^3.3.0",
+    "eslint": "^5.4.0",
+    "eslint-config-prettier": "^3.0.1",
     "eslint-config-xo": "^0.24.2",
     "eslint-plugin-prettier": "^2.6.0",
     "husky": "^0.14.3",
-    "istanbul": "^0.4.5",
+    "istanbul": "^1.0.0-alpha.2",
     "jest": "^23.5.0",
     "lint-staged": "^7.2.2",
     "mocha": "^5.2.0",
     "mocha-lcov-reporter": "^1.3.0",
-    "prettier": "^1.15.2"
+    "prettier": "^1.11.1"
   },
   "engines": {
     "npm": ">= 4.0.0"
@@ -68,18 +68,18 @@
     "pretest": "eslint .",
     "precommit": "lint-staged",
     "test": "mocha",
-    "cover": "istanbul cover _mocha node_modules/mocha/bin/_mocha  ",
+    "cover": "istanbul cover _mocha",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
-  "repository": "git@github.com:chuangshi167/mcmc",
+  "repository": "git@github.com:chuangshi167/mcmc.git",
   "jest": {
     "testEnvironment": "node"
   },
   "license": "MIT",
   "dependencies": {
-    "ajv": "^6.5.5",
+    "ajv": "^6.5.4",
     "command-line-args": "^5.0.2",
-    "jsnetworkx": "^0.3.4",
-    "mocha": "^5.2.0"
+    "jquery": "^3.3.1",
+    "jsnetworkx": "^0.3.4"
   }
 }
