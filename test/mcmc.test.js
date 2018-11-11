@@ -6,7 +6,7 @@ describe('mcmc', () => {
   it('set default correct', () => {
     var inputValue = mcmc.setDefault({});
     assert.equal(inputValue.r, 1);
-    assert.equal(inputValue.T, 0);
+    assert.equal(inputValue.T, 0.1);
     assert.equal(inputValue.number, 5);
   });
   it('create a graph', () => {
@@ -21,9 +21,16 @@ describe('mcmc', () => {
     var distance = mcmc.distance(G, 0, 1);
     assert.equal(5, distance);
   });
-  it('check the connectivity', () => {
+  it('check dfs is working correctly', () => {
     var G = mcmc.createGraph(5, [[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1]]);
     assert.equal(mcmc.dfs(G).toString(), '0,1,4,2,3');
+  });
+  it('check if the graph is connected', () => {
+    var G = mcmc.createGraph(5, [[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1]]);
+    assert.equal(mcmc.isConnected(G), true);
+    G.removeEdge(1, 2);
+    G.removeEdge(0, 1);
+    assert.equal(mcmc.isConnected(G), false);
   });
   it('creates the correct adjacency matrix', () => {
     var G = new jsnx.Graph();
@@ -123,5 +130,12 @@ describe('mcmc', () => {
     assert.equal(mcmc.proposalDistribution(Gk, Gi), 0.5);
     assert.equal(mcmc.proposalDistribution(Gi, Gk), 0.2);
   });
-
+  it('determine add/remove edge correctly', () => {
+    var Gi = mcmc.createGraph(4, [[0, 0], [1, 0], [1, 1], [0, 1]]);
+    var Gj = mcmc.createGraph(4, [[0, 0], [1, 0], [1, 1], [0, 1]]);
+    Gi.removeEdge(0, 3);
+    Gj.addWeightedEdgesFrom([[0, 2, Math.sqrt(2)], [1, 3, Math.sqrt(2)]]);
+    assert(mcmc.addOrRemove(Gi));
+    assert(!mcmc.addOrRemove(Gj));
+  });
 });
