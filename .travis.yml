@@ -3,7 +3,7 @@ node_js:
   - v10
   - v8
 #script: make test-coveralls
-#after_script: cat ./coverage/lcov.info | coveralls
+after_script: cat ./coverage/lcov.info | coveralls
 before_script:
   - npm install -g grunt-cli
 
