@@ -70,7 +70,7 @@
     "cover": "istanbul cover _mocha",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
-  "repository": "chuangshi167/mcmc",
+  "repository": "git@github.com:chuangshi167/mcmc",
   "jest": {
     "testEnvironment": "node"
   },
