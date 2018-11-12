@@ -1,6 +1,12 @@
 # mcmc [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > Markov Chain Monte Carlo
 
+## Introduction
+
+This project is an implementation of Metropolis-Hastings algorithm to simulate graphs, and will find the most probable graphs based on user's input.
+```sh
+$f(\left\{s_i, X_i\right\},(\left\{s_j, X_j\right\} ) = e^{-(\theta(s_i, Xj) -\theta(s_j, Xi)/T}$
+```
 ## Installation
 
 ```sh
