@@ -3,10 +3,11 @@
 
 ## Introduction
 
-This project is an implementation of Metropolis-Hastings algorithm to simulate graphs, and will find the most probable graphs based on user's input.
-```sh
+This project is an implementation of Metropolis-Hastings algorithm to simulate graphs, and will find the most probable graphs based on user's input and the following equation
 ![](http://latex.codecogs.com/gif.latex?%24f%28%5Cleft%5C%7Bs_i%2C%20X_i%5Cright%5C%7D%2C%28%5Cleft%5C%7Bs_j%2C%20X_j%5Cright%5C%7D%20%29%20%3D%20e%5E%7B-%28%5Ctheta%28s_i%2C%20Xj%29%20-%5Ctheta%28s_j%2C%20Xi%29/T%7D%24)
-```
+
+in which,
+
 ## Installation
 
 ```sh
