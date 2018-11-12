@@ -162,4 +162,9 @@ describe('mcmc', () => {
     var weightList = [1, 2, 3, 4, 5];
     assert.equal(mcmc.expectedValue(targetList, weightList), 40 / 15);
   });
+  it('run mcmc simulation successfully', () => {
+    var input = mcmc.setDefault({});
+    input.iterations = 100;
+    assert(mcmc.markovChain(input));
+  });
 });
