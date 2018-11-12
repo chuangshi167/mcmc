@@ -40,7 +40,7 @@ There are
 
 --r: the r facotr in theta equation. Default is 1
 
---T: the T factor in f equation. Default is 0.1
+--T: the T factor in f equation. Default is 0.1 (When T is near to 0, only the optimial proposal can be accepted. The larger the T is, the more likely a proposal will be accepted)
 
 --iterations: the number of iterations. Default is 1000
 

@@ -167,4 +167,9 @@ describe('mcmc', () => {
     input.iterations = 100;
     assert(mcmc.markovChain(input));
   });
+  it('run teh main function successfully', () => {
+    var input = mcmc.setDefault({});
+    input.iterations = 100;
+    assert(mcmc.main(input));
+  });
 });
